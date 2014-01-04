@@ -11,7 +11,8 @@
             'imgSelector':'img',
             'parentSelector':'.carousel',
             'nextSelector':'.next',
-            'prevSelector':'.prev'
+            'prevSelector':'.prev',
+            'webService':"js/data_seed.json"
         };
 
         //set default options
@@ -124,7 +125,7 @@
         //get next user id
         this.nextUser();
 
-        $.getJSON("js/data_seed.json",{
+        $.getJSON(this.option('webService'),{
             userId:userId
         },function( data ) {
             self.appendNextImg(data['profilePicture'],userId);
